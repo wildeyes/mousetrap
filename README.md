@@ -1,5 +1,8 @@
 # Mousetrap
 
+*fork changes:*
+I changed the `_increaseSequence` function to stop the propagation of the keyboard event - which is the desired functionality in my chrome extension [**Fast Pick**](https://github.com/wildeyes/FastPick).
+
 Mousetrap is a simple library for handling keyboard shortcuts in Javascript.
 
 It is around **1.9kb** minified and gzipped and **3.5kb** minified, has no external dependencies, and has been tested in the following browsers:

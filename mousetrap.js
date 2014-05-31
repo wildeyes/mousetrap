@@ -213,11 +213,12 @@
      * @returns void
      */
     function _addEvent(object, type, callback) {
+
         if (object.addEventListener) {
-            object.addEventListener(type, callback, false);
+            object.addEventListener(type, callback, true);
             return;
         }
-
+        
         object.attachEvent('on' + type, callback);
     }
 
@@ -668,7 +669,10 @@
          * @returns {Function}
          */
         function _increaseSequence(nextAction) {
-            return function() {
+            //Library Edit :) START
+            return function(KBEvent) {
+                KBEvent.stopPropagation()
+                //Library Edit :) END
                 _nextExpectedAction = nextAction;
                 ++_sequenceLevels[combo];
                 _resetSequenceTimer();
